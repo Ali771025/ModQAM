@@ -1,0 +1,9 @@
+function [ pxx, f ] = PlotSpectrum(x,fs)
+% Plots the power spectrum of signal x
+% x: vector containing the samples of the signal
+% fs: sampling rate
+[pxx,f] = pwelch(x,[],[],[],fs,'centered');
+plot(f,10*log10(pxx))
+xlabel('f (Hz)'); ylabel('dB');
+grid;
+end
